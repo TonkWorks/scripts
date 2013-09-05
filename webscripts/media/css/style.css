@@ -27,6 +27,11 @@ dt,dd {
    height:60px;   /* Height of the footer */
 }
 
+.output-frame{
+	overflow: auto;
+	min-height: 300px;
+	min-width:  800px;
+}
 
 /*
  *	Cards 

@@ -15,7 +15,6 @@ import urllib
 
 import re
 
-from models import Script
 
 import logging
 import os.path

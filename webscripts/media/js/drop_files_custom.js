@@ -30,8 +30,8 @@ $(function(){
 		    var url = "/bin/" + response.operation_uuid +"/";
 			var win=window.open(url, '_blank');
   			win.focus();
-
-			//$('<iframe src="' + url + '" frameborder="0" scrolling="no" id="myFrame"></iframe>').appendTo('body');
+  			$("#output").append("</br><a href='" + url + "'>" + url + "</a></br>")
+			$('<iframe src="' + url + '" frameborder="1" class="output-frame"></iframe>').appendTo('#output');
 
 
 			//win.focus();
