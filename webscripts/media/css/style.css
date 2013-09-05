@@ -1,0 +1,277 @@
+dl {
+  margin-bottom: 10px;
+}
+
+dt {
+  font-weight: normal;
+}
+
+dt,dd {
+  line-height: 25px;
+  padding-top: 5px;
+  margin-bottom: 10px;;
+}
+.home_bp{background:transparent url(../img/logo.png) top center no-repeat;padding-top:20em;text-align:center}.home_bp h1{font-size:1.6em}.home_bp p{font-size:1.2em}
+
+.container{
+	margin-top:33px;
+}
+
+
+.footer{
+   clear:both;
+   bottom:0;
+   min-width: 200px;
+   text-align: center;
+   margin: auto;
+   height:60px;   /* Height of the footer */
+}
+
+
+/*
+ *	Cards 
+ * 
+ */
+
+.card{
+	position: relative;
+	display: table;
+}
+.card .big_img{
+	float: left;
+	display: table-row;
+	height: 150px;
+	width: 150px;
+}
+
+.card .card_information_holder{
+	display: table-row;
+	float: left;
+
+	margin-left: 40px;
+
+}
+
+.card card_information_holder script_button{
+
+}
+
+.card card_information_holder description{
+	
+}
+
+/*
+ *	Overrides 
+ * 
+ */
+
+
+
+.navbar navbar-fixed-top{
+	line-height:14px;
+	max-height:10px;
+	color: black;
+}
+.navbar-inner{
+	min-height:25px;
+	height:25px;
+	
+		background-color: black;
+	background-image: none;
+	background-color: white;
+	
+}
+
+.navbar-inner-content{
+	max-width:1200px;
+	margin: auto;
+}
+
+.navbar .brand{
+	padding: 2px 20px 0px;
+	font-size: 14px;
+
+}
+.navbar .divider-vertical{
+	height: 20px;
+}
+.navbar .nav>li>a {
+	padding: 2px 20px 0px;
+	font-size: 14px;
+}
+
+
+/*-------------------------
+	Dropbox Element
+--------------------------*/
+
+
+
+#dropbox{
+	clear: both;
+	background:url('/static/js/assets/img/background_tile_3.jpg');
+	
+	border-radius:3px;
+	position: relative;
+	margin:0px auto;
+	margin-bottom: 40px;
+	min-height: 75px;
+	overflow: hidden;
+	padding-bottom: 10px;
+    width: 600px;
+	
+	box-shadow:0 0 4px rgba(0,0,0,0.3) inset,0 -3px 2px rgba(0,0,0,0.1);
+}
+
+
+#dropbox .message{
+	font-size: 11px;
+    text-align: center;
+    padding-top:35px;
+    display: block;
+    	color:#FFFFFF;
+
+}
+
+#dropbox .message i{
+	color:#FFFFFF;
+	font-size:10px;
+}
+
+#dropbox:before{
+	border-radius:3px 3px 0 0;
+}
+
+
+
+/*-------------------------
+	DP Image Previews
+--------------------------*/
+
+
+
+#dropbox .preview{
+	width:245px;
+	height: 215px;
+	float:left;
+	margin: 55px 0 0 60px;
+	position: relative;
+	text-align: center;
+}
+
+#dropbox .preview img{
+	max-width: 240px;
+	max-height:180px;
+	border:3px solid #fff;
+	display: block;
+	
+	box-shadow:0 0 2px #000;
+}
+
+#dropbox .imageHolder{
+	display: inline-block;
+	position:relative;
+}
+
+#dropbox .uploaded{
+	position: absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	background: url('/static/js/assets/img/done.png') no-repeat center center rgba(255,255,255,0.5);
+	display: none;
+}
+
+#dropbox .preview.done .uploaded{
+	display: block;
+}
+
+
+
+/*-------------------------
+	DP Progress Bars
+--------------------------*/
+
+
+
+#dropbox .progressHolder{
+	position: absolute;
+	background-color:#252f38;
+	height:12px;
+	width:100%;
+	left:0;
+	bottom: 0;
+	
+	box-shadow:0 0 2px #000;
+}
+
+#dropbox .progress{
+	background-color:#2586d0;
+	position: absolute;
+	height:100%;
+	left:0;
+	width:0;
+	
+	box-shadow: 0 0 1px rgba(255, 255, 255, 0.4) inset;
+	
+	-moz-transition:0.25s;
+	-webkit-transition:0.25s;
+	-o-transition:0.25s;
+	transition:0.25s;
+}
+
+#dropbox .preview.done .progress{
+	width:100% !important;
+}
+
+
+@media screen and (max-width: 480px)  
+{
+	 #inputContainer{
+	 	width: 100%;
+	 }
+	 
+	 #dropbox{
+	 	max-width: 100%;
+	 }
+	 .node_info_container{
+	 	max-width: 100%;
+	 }
+	 .node_info_column{
+	 	max-width: 100%;
+	 	margin-left: 0px;
+	 }
+	 .node_info_actions{
+	 	margin-left: 0px;
+	 }
+}
+
+
+/*-------------------------
+	Login-homepage
+--------------------------*/
+#home-login{
+	margin-top: 60px;
+	float: right;
+	max-width: 350px;
+}
+
+.control-group{
+}
+h4{
+	font-size: 14px;
+}
+#login{
+	float:left;
+	margin-left: 0px;
+	margin-right: 10px;
+}
+
+.checkbox{
+	float: left;
+	margin-top: 4px;		
+}
+.stay-signed-in{
+	float: left;
+}

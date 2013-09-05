@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>scripts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css"/>
+
+  </head>
+
+
+
+
+
+
+
+  <body>
+  <!--TopBar -->
+       <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+            <div class="navbar-inner-content">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-chevron-down icon"></span>
+                </button>
+                <a class="brand" href="/">scripts</a>
+                <div class="nav-collapse">
+                    <ul class="nav pull-right">
+                    </ul>
+                </div><!-- /.nav-collapse -->
+            </div><!-- /navbar-inner-content-->
+            </div><!-- /navbar-inner -->
+        </div><!-- /navbar -->
+<!-- /TopBar -->
+
+
+  <div class="container">
+
+    
+    <ul class="breadcrumb">
+      <li><a href="/">Home</a> <span class="active">/</span></li>
+      <li class="active">{{script.title}}</li>
+    </ul>
+
+
+
+      <div class="well well-large">
+
+            <div class='card'>
+            
+               <div class='big_img'>
+                  <img src="/static/images/{{script.image}}" width='150px'>
+               </div>
+
+
+               <div class='card_information_holder'>
+                  <h2>
+                      {{script.title}}
+                  </h2>
+               
+                  <div class='description'>
+                      {{script.description}}
+                  </div>
+               </div>
+             </div>
+      </div>
+
+      <div class="well well-large">
+          <h5>Input:</h5>
+
+          <div id="dropbox">
+            <span class="message">Drop files here to convert. <br /></span>
+          </div>
+
+          <div id="inbox">
+          </div>
+      </div>
+
+
+      <div class="well well-large">
+          <h5>Output:</h5>
+          <div id="output">
+          </div>
+      </div>
+
+    </div> <!--Container -->
+
+
+    <!-- The file drop -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
+
+
+    <!-- The file drop -->
+    <script src="/static/js/jquery.json-2.3.js" type="text/javascript"></script>
+    <script src="/static/js/jquery.filedrop.js" type="text/javascript"></script>
+    <script src="/static/js/drop_files_custom.js" type="text/javascript"></script>
+
+    <script src="/static/js/webscripts.js" type="text/javascript"></script>
+
+
+    <script>
+      var script_name='{{script.title}}';
+      runDropBoxSetup("None");
+    </script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33902626-1']);
+  _gaq.push(['_setDomainName', 'tonkworks.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  </body>
+</html>
