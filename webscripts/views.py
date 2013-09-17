@@ -74,6 +74,7 @@ def get_scripts():
                     scripts.append(i)
 
 get_scripts()
+root_path = os.path.dirname(os.path.realpath(__file__))
 
 def get_script_by_title(title):
 	try:
@@ -139,8 +140,8 @@ def CommandHandler(request, operation_uuid=None, input_file=None):
             #Determine Script to use
             #Use script
             #input_file = file_path
-            input_script = os.path.join(os.getcwd(), "webscripts", "scripts", input_script)
-            bin_dir = os.path.join(os.getcwd(), "webscripts", "bin", operation_uuid) #TODO make folder with id .. grab everything in that folder
+            input_script = os.path.join(root_path, "scripts", input_script)
+            bin_dir = os.path.join(root_path, "bin", operation_uuid) #TODO make folder with id .. grab everything in that folder
 
             if not os.path.exists(bin_dir):
                 os.makedirs(bin_dir)
@@ -212,7 +213,7 @@ def FileUploadHandler(request):
 
             #final_filename= operation_uuid+extension
 
-            upload_dir_path =  os.path.join(os.getcwd(), "webscripts", "uploads", operation_uuid)
+            upload_dir_path =  os.path.join(root_path, "uploads", operation_uuid)
             file_path =  os.path.join(upload_dir_path, original_fname)
 
             if not os.path.exists(upload_dir_path):
