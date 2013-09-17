@@ -6,6 +6,7 @@ from BeautifulSoup import BeautifulSoup
 import argparse
 import os
 import subprocess
+import sys
 
 #Script Info goes here.
 __info__ = [

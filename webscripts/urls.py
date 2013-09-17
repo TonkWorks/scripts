@@ -12,8 +12,8 @@ import settings
 
 ROOT_PATH = os.path.dirname(__file__)
 STATICFILES_DIRS = [os.path.join(ROOT_PATH, 'media')]
-SCRIPTS_DIR = os.path.join(os.getcwd(), "webscripts", "scripts")
-BIN_DIR = os.path.join(os.getcwd(), "webscripts", "bin")
+SCRIPTS_DIR = os.path.join(ROOT_PATH, "scripts")
+BIN_DIR = os.path.join(ROOT_PATH, "bin")
 
 urlpatterns = patterns('',
     # Examples:
