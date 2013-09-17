@@ -45,8 +45,8 @@ dt,dd {
 .card .big_img{
 	float: left;
 	display: table-row;
-	height: 150px;
-	width: 150px;
+	height: 50px;
+	width: 50px;
 }
 
 .card .card_information_holder{

@@ -22,17 +22,10 @@ $(function(){
 			// response.file_data = parsed
 			// nodes.push(response);
 			//placeNodeAtFront(response);
+			write_output(response)
 
-			$("#output").html(response.output);
-
-
-			//Get File Back
-		    var url = "/bin/" + response.operation_uuid +"/";
-			var win=window.open(url, '_blank');
-  			win.focus();
-  			$("#output").append("</br><a href='" + url + "'>" + url + "</a></br>")
-			$('<iframe src="' + url + '" frameborder="1" class="output-frame"></iframe>').appendTo('#output');
-
+			message.show();
+			$(".preview").remove();
 
 			//win.focus();
 
@@ -55,7 +48,7 @@ $(function(){
 		},
 		dragEnter: function(){
 			if (this.clearBox == true){
-				$("#dropbox").html("");
+				$("#output").html("");
 			}
 		},
 		afterAll: function(){
@@ -100,8 +93,8 @@ $(function(){
 
 		var reader = new FileReader();
 
-		image.width = 100;
-		image.height = 100;
+		image.width = 25;
+		image.height = 25;
 
 		reader.onload = function(e){
 
