@@ -30,9 +30,11 @@ def script():
     args=parser.parse_args()
     site_url = args.site_url
 
-    
-    command = "youtube-dl.exe {0}".format(site_url)
-
+    command = ''
+    if sys.platform == 'win32':
+        command = "youtube-dl.exe {0}".format(site_url)
+    else:
+        command = "youtube-dl {0}".format(site_url)
 
     print command
     p =subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
