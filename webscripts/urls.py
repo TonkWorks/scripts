@@ -10,7 +10,7 @@ import settings
 # admin.autodiscover()
 
 
-ROOT_PATH = os.path.dirname(__file__)
+ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
 STATICFILES_DIRS = [os.path.join(ROOT_PATH, 'media')]
 SCRIPTS_DIR = os.path.join(ROOT_PATH, "scripts")
 BIN_DIR = os.path.join(ROOT_PATH, "bin")
