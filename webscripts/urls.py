@@ -11,8 +11,8 @@ import settings
 
 
 ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
-if sys.platform == 'win32':
-    ROOT_PATH = os.path.join(ROOT_PATH, 'webscripts')
+# if sys.platform != 'win32':
+#     ROOT_PATH = os.path.join(ROOT_PATH, 'webscripts')
 STATICFILES_DIRS = [os.path.join(ROOT_PATH, 'media')]
 SCRIPTS_DIR = os.path.join(ROOT_PATH, "scripts")
 BIN_DIR = os.path.join(ROOT_PATH, "bin")

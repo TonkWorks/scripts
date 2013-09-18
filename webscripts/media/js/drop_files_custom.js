@@ -23,6 +23,7 @@ $(function(){
 			// nodes.push(response);
 			//placeNodeAtFront(response);
 			write_output(response)
+			$("#loading").hide();
 
 			message.show();
 			$(".preview").remove();
@@ -67,6 +68,8 @@ $(function(){
 
 		uploadStarted:function(i, file, len){
 			createImage(file);
+			$("#loading").show();
+
 		},
 
 		progressUpdated: function(i, file, progress) {

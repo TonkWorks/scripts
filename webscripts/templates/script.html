@@ -51,8 +51,8 @@
             
                <div class='big_img'>
                   <img src="/static/images/{{script.image}}" width='150px'>
-               </div>
 
+               </div>
 
                <div class='card_information_holder'>
                   <h2>
@@ -93,11 +93,52 @@
 
       <div class="well well-large">
           <h5>Output:</h5>
+          <div id='loading'>
+                <img id='loading_pic' src="/static/images/loading.gif">
+          </div>
           <div id="output">
           </div>
       </div>
 
     </div> <!--Container -->
+
+
+<!-- start: footer -->
+<div class="footer">
+
+<div class="grid">
+  <div class="col-1-2">
+          <h5>webscripts is an open source </br>project backed by</h5>
+
+        <p class="logo"><a href="http://www.tonkworks.com" target="_blank"><img src="/static/images/tonkworks-light.png" alt="tonkworks" /></a></p>
+
+  </div>
+  <div class="col-1-2">
+          <h5>based on these open </br>source technologies</h5>
+
+
+          <p class="col-1-2"><a href="https://www.djangoproject.com/" target="_blank"><img src="/static/images/logo_django_white.png" /></a></p>
+
+          <p class="col-1-2"><a href="http://python.org/" target="_blank"><img src="/static/images/logo_python_white.png" /></a></p>
+
+  </div>
+</div>
+
+
+<div class="grid">
+  <div class="col-1-2-mid">
+      <p class="col-1-2"><a href="https://www.facebook.com/tonkworks" target="_blank"><img src="/static/images/fb.png"/></a></p>
+
+      <p class="col-1-2"><a href="https://github.com/Kevdragon6/scripts" target="_blank"><img src="/static/images/github.png"/></a></p>
+  </div>
+
+</div>
+
+</footer>
+<!-- end: footer -->
+
+
+
 
 
     <!-- The file drop -->
@@ -110,13 +151,14 @@
     <script src="/static/js/drop_files_custom.js" type="text/javascript"></script>
 
 
+
     <script>
       var script_name='{{script.title}}';
       runDropBoxSetup("None");
 
 
-
 function submit(){
+  $("#loading").show();
   $("#output").html("");
   var url = '/command?script_name=' + script_name;
   
