@@ -5,11 +5,15 @@ import urllib
 from BeautifulSoup import BeautifulSoup
 import argparse
 import os
+#Overall info goes here.
+___overview___ = {
+    'title': "Web Scrapers",
+}
 
-#Script Info goes here.
+#Function Info goes here.
 __info__ = [
 {
-	'title': "Download images from a site",
+	'title': "Download all images from a web page",
 	'author': "Kevin Dagostino",
 	'input': {
 		'label': 'url',

@@ -6,104 +6,13 @@ import argparse
 import os
 import Image
 
-#Script Info goes here.
-__info__ = [
-{
-	'title': "Convert to .bmp",
-	'author': "Kevin Dagostino",
-	'file_input': True,
-	'parameters': '--ext=bmp'
-},
-{
-	'title': "Convert to .dcx",
-	'author': "Kevin Dagostino",
-	'file_input': True,
-	'parameters': '--ext=dcx'
-},
-{
-	'title': "Convert to .eps",
-	'author': "Kevin Dagostino",
-	'file_input': True,
-	'parameters': '--ext=eps'
-},
-{
-	'title': "Convert to .gif",
-	'author': "Kevin Dagostino",
-	'file_input': True,
-	'parameters': '--ext=gif'
-},
-{
-	'title': "Convert to .im",
-	'author': "Kevin Dagostino",
-	'file_input': True,
-	'parameters': '--ext=im'
-},
-{
-	'title': "Convert to .jpg",
-	'author': "Kevin Dagostino",
-	'file_input': True,
-	'parameters': '--ext=jpg'
-},
-{
-	'title': "Convert to .jpeg",
-	'author': "Kevin Dagostino",
-	'file_input': True,
-	'parameters': '--ext=jpeg'
-},
-{
-	'title': "Convert to .pcd",
-	'author': "Kevin Dagostino",
-	'file_input': True,
-	'parameters': '--ext=pcd'
-},
-{
-	'title': "Convert to .pcx",
-	'author': "Kevin Dagostino",
-	'file_input': True,
-	'parameters': '--ext=pcx'
-},
-{
-	'title': "Convert to .pdf",
-	'author': "Kevin Dagostino",
-	'file_input': True,
-	'parameters': '--ext=pdf'
-},
-{
-	'title': "Convert to .png",
-	'author': "Kevin Dagostino",
-	'file_input': True,
-	'parameters': '--ext=png'
-},
-{
-	'title': "Convert to .ppm",
-	'author': "Kevin Dagostino",
-	'file_input': True,
-	'parameters': '--ext=ppm'
-},
-{
-	'title': "Convert to .psd",
-	'author': "Kevin Dagostino",
-	'file_input': True,
-	'parameters': '--ext=psd'
-},
-{
-	'title': "Convert to .tiff",
-	'author': "Kevin Dagostino",
-	'file_input': True,
-	'parameters': '--ext=tiff'
-},
-{
-	'title': "Convert to .xbm",
-	'author': "Kevin Dagostino",
-	'file_input': True,
-	'parameters': '--ext=xbm'
-},
-{
-	'title': "Convert to .xpm",
-	'author': "Kevin Dagostino",
-	'file_input': True,
-	'parameters': '--ext=xpm'
+#Overall info goes here.
+___overview___ = {
+	'title': "Convert Image Files",
 }
+
+#Function Info goes here.
+__info__ = [
 ]
 
 
@@ -133,3 +42,24 @@ def script():
 
 if __name__ == '__main__':
 	script()
+
+
+
+#Expand num of scripts with parameter options
+def expand_infos():
+	input_types = ['bmp', 'dib', 'dcx', 'eps', 'ps', 'gif', 'im', 'jpg', 'jpe', 'jpeg',
+				   'pcd', 'pcx', 'pdf', 'png', 'pbm', 'pgm', 'ppm', 'psd', 'tif', 'tiff',
+				   'xbm', 'xpm']
+	output_types = input_types
+	for i in input_types:
+		for j in output_types:
+			if i != j:
+				info = {
+					'title': "Convert .{0} to .{1}".format(i, j),
+					'author': "Kevin Dagostino",
+					'file_input': True,
+					'parameters': '--ext={0}'.format(j)
+				}
+				__info__.append(info)
+
+expand_infos()

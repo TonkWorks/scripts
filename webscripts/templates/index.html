@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>scripts</title>
+    <title>webscripts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css" media="screen">
@@ -24,7 +24,7 @@
                 <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                     <span class="icon-chevron-down icon"></span>
                 </button>
-                <a class="brand" href="/">scripts</a>
+                <a class="brand" href="/">webscripts</a>
                 <div class="nav-collapse">
                     <ul class="nav pull-right">
                     </ul>
@@ -34,41 +34,56 @@
         </div><!-- /navbar -->
 <!-- /TopBar -->
 
+<div id="holder">
 
-  <div class="container">
+  <div class="container-fluid">
 
-      {% for script in scripts %}
+      <div class="row-fluid">
 
+      {% for key, values in script_dictionary.items %}
 
-      <div class="well well-large">
+       <div class="span3">
 
-            <div class='card'>
-            
-               <div class='big_img'>
-                  <a href='/script/{{script.title}}'><img src="/static/images/{{script.image}}">
-                  </a>
-               </div>
+          <div class="well well-large">
+                   
+                  <h5>{{values.overview.title}}</h5>
 
 
-               <div class='card_information_holder'>
-                  <form class='script_button' action="/script/{{script.title}}">
-                      <input class="btn btn-large btn-primary" type="submit" value="{{script.title}}">
-                  </form>
-               
-                  <div class='description'>
-                      {{script.description}}
-                  </div>
-               </div>
-             </div>
-      </div>
 
+                   {% for script in values.scripts %}
+                   <div class='index_script_holder'>
+
+                     <div class='big_img'>
+                        <a href='/script/{{script.title}}'><img src="/static/images/{{script.image}}">
+                        </a>
+                     </div>
+
+                      <a class='script_title' href='/script/{{script.title}}'>{{script.title}}
+                      </a>
+                   </div>
+
+                   <div class='card_information_holder'>
+
+                      <div class='description'>
+                          {{script.description}}
+                      </div>
+                   </div>
+                   {% endfor %}
+
+
+          </div>
+        </div>
       {% endfor %}
+      </div>
 
   <div class="loader more">
 </div>
-    </div> <!--Container -->
 
-<div class="footer">
+
+</div> <!--Container -->
+
+<!-- start: footer -->
+<div class="navbar navbar-fixed-bottom" id='footer'>
 
 <div class="grid">
   <div class="col-1-2">
@@ -100,6 +115,9 @@
 
 </footer>
 <!-- end: footer -->
+
+
+</div> <!-- holder -->
 
     <!-- jquery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript">

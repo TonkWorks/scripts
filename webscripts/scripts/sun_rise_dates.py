@@ -4,8 +4,12 @@ import urllib2
 from BeautifulSoup import BeautifulSoup
 import argparse
 
+#Overall info goes here.
+___overview___ = {
+    'title': "Utilities",
+}
 
-#Script Info goes here.
+#Function Info goes here.
 __info__ = [{
 	'title': "Get Sun Rise Dates",
 	'author': "Kevin Dagostino",

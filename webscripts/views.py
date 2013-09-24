@@ -27,29 +27,28 @@ import sqlite3
 
 
 scripts = []
+script_dictionary = {
+    
+}
 
 def home(request):
 	return render_to_response('webscripts/templates/index.html',
 	        {
-	        	'scripts': scripts
+	        	'scripts': scripts,
+                'script_dictionary': script_dictionary
 	        }
 	)
 
 def script(request, script_name):
+    s = get_script_by_title(script_name)
+    if not s:
+        pass #TODO return 404
 
-	print script_name
-	s = get_script_by_title(script_name)
-
-	if not s:
-		pass #TODO return 404
-
-	print s
-
-	return render_to_response('webscripts/templates/script.html',
-	        {
-	        	'script': s
-	        }
-	)
+    return render_to_response('webscripts/templates/script.html',
+        {
+            'script': s
+        }
+    )
 
 
 
@@ -63,27 +62,48 @@ def get_scripts():
     for f in os.listdir(scripts_path):
         ext = os.path.splitext(f)
         if ext[1] == '.py':
-            module = __import__( ext[0] )
+            script_file = ext[0]
+            module = __import__( script_file )
+
+
+            script_dictionary[script_file] = {}
+            script_dictionary[script_file]['scripts'] = []
+
+
+            if hasattr(module, '___overview___'):
+                script_dictionary[script_file]['overview'] =  module.___overview___
+
+
             if hasattr(module, '__info__'):
                 info = module.__info__
                 for i in info:
                     i['script_name'] = f
+                    i['script_file'] = script_file
 
                     if 'image' not in i:
                         i['image'] = 'default.png'
                     scripts.append(i)
 
+
+                    script_dictionary[script_file]['scripts'].append(i)
+
 get_scripts()
 root_path = os.path.dirname(os.path.realpath(__file__))
 
 def get_script_by_title(title):
-	try:
-		for x in scripts:
-			if (x['title'] == title):
-				return x
-	except Exception, e:
+    try:
+        for script_file in script_dictionary:
+            scripts = script_dictionary[script_file]['scripts']
+
+            for x in scripts:
+                if (x['title'] == title):
+                    x['overview'] = script_dictionary[script_file]['overview']
+                    return x
+    except Exception, e:
 		print e
 		return None
+
+
 def APISaveHandler(request):
     s = Script()
     s.script_name = request.GET.get("script_name", default=None)
