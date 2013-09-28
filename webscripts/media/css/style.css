@@ -18,6 +18,10 @@ dt,dd {
     position:relative;
 }
 
+.iframe{
+    width: 100%;
+    overflow: auto;
+}
 .container-fluid{
 	margin-top:33px;
     padding-bottom: 350px;    /* height of footer */
@@ -229,6 +233,18 @@ display:none;
 }
 
 
+#file_chooser{
+    display: block;
+    margin:auto;
+}
+#file_upload_form{
+    width: 600px;
+
+    text-align: center;
+    position: relative;
+        display: block;
+    margin:auto;
+}
 /*-------------------------
 	Dropbox Element
 --------------------------*/

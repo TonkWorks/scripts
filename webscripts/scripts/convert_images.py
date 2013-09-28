@@ -47,7 +47,7 @@ if __name__ == '__main__':
 
 #Expand num of scripts with parameter options
 def expand_infos():
-	input_types = ['bmp', 'dib', 'dcx', 'eps', 'ps', 'gif', 'im', 'jpg', 'jpe', 'jpeg',
+	input_types = ['bmp', 'dcx', 'eps', 'ps', 'gif', 'im', 'jpg', 'jpe', 'jpeg',
 				   'pcd', 'pcx', 'pdf', 'png', 'pbm', 'pgm', 'ppm', 'psd', 'tif', 'tiff',
 				   'xbm', 'xpm']
 	output_types = input_types

@@ -106,7 +106,7 @@ def expand_infos():
             if j == 'wav' or j == 'mp3':
                 info['parameters'] = '--audio_format=true'
             else:
-                info['parameters'] = '--video_ext={0}'.format(j)
+                info['parameters'] = '--video_format={0}'.format(j)
 
             __info__.append(info)
 
